@@ -1,0 +1,41 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "humidity": {
+      "operation": {
+        "store": {
+          "ttl": "7d"
+        }
+      },
+      "type": "number"
+    },
+    "light": {
+      "operation": {
+        "store": {
+          "ttl": "7d"
+        }
+      },
+      "type": "number"
+    }
+
+    "temperature": {
+      "operation": {
+        "store": {
+          "ttl": "7d"
+        },
+        "transform": {
+          "expression": "(($.temperature)"
+        }
+      },
+      "type": "number"
+    },
+    "place": {
+      "operation": {
+        "store": {
+          "ttl": "7d"
+        }
+      },
+      "type": "string"
+    }
+  }
+}

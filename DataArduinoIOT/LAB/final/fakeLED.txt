@@ -1,0 +1,46 @@
+int ledMatrixState = 0b00;
+
+if (message == "0OFF") {
+      ledMatrixState ^= 0b01;
+    }
+      
+    if (message == "0ON") {
+      ledMatrixState |= 0b01;
+    }
+
+    if (message == "1OFF") {
+      ledMatrixState ^= 0b10;
+    }
+
+    if (message == "1ON") {
+      ledMatrixState |= 0b10;
+    }
+        
+
+    const uint32_t ledmatrix[][4] = {
+	{
+		0x70e89189,
+		0x1891891f,
+		0x9f50a408
+	},
+	{
+		0x70e89f89,
+		0xf89f89ff,
+		0x9f50a408
+	},
+  {
+		0x70ef91f9,
+		0x1f91f91f,
+		0x9f50a408
+	},
+	{
+		0x70ef9ff9,
+		0xff9ff9ff,
+		0x9f50a408
+	}
+};
+
+    matrix.loadFrame(ledmatrix[ledMatrixState]);
+  }
+  
+}
